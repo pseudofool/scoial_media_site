@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts')
+const db = require('./config/mongoose');
 
+app.use(express.urlencoded());
+app.use(cookieParser());
 // use static files
 app.use(express.static("./assets"));
 
@@ -24,5 +28,6 @@ app.listen(port, function(err){
         console.log(`Error in running the server: ${err}`);
         return;
     }
+    console.log(__dirname);
     console.log(`Server is running at port: ${port}`);
 })
