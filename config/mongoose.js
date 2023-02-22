@@ -6,3 +6,5 @@ async function main(){
     await mongoose.connect('mongodb://localhost/codeial_development');
     console.log("Successfully connected to db!");
 }
+// const db = mongoose.connection;
+// module.exports = db;
